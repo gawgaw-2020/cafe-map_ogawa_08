@@ -1,0 +1,8 @@
+// 各scssファイルを順番に読み込むファイル
+
+@import "reset";
+@import "mixin";
+@import "base";
+@import "common-parts";
+@import "header";
+@import "project";

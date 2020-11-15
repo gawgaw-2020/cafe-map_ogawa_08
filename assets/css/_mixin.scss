@@ -1,0 +1,37 @@
+// color palette
+
+$color-pure-white: #ffffff;
+$color-white: #f7f7f7;
+$color-black: #333333;
+$color-blue: #36B0DF;
+$color-green: #86C833;
+$color-red: #FF5644;
+
+$color-light-side__text: #ebcd29;
+$color-light-side__border: #c5c56f;
+$color-light-side__background: rgba(214, 224, 129, 0.123);
+
+$color-dark-side__text: #ca0000;
+$color-dark-side__border: #D1382C;
+$color-dark-side__background: rgba(226, 62, 62, 0.137);
+
+$color-droid__text: #23c2ce;
+$color-droid__border: #2cb0d1;
+$color-droid__background: rgba(62, 188, 226, 0.137);
+
+// break point
+
+$breakpoints: (
+  'sm': 'screen and (min-width: 400px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 1000px)',
+  'xl': 'screen and (min-width: 1200px)',
+  'xxl': 'screen and (min-width: 1920px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+

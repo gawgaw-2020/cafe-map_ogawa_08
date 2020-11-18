@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>モニカツ｜朝活情報 in 原宿</title>
+  <title><?php echo title; ?></title>
   <link rel="icon" href="/cafe-map_ogawa_08/146_w_hoso.png">
   <!-- OGP Tag data-->
   <meta name="twitter:card" content="summary_large_image">

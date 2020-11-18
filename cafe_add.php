@@ -113,7 +113,7 @@ $('#input-test').on('click', function() {
     //参考URL:https://api.gnavi.co.jp/api/manual/restsearch/
     const data = {
         keyid: "518af56caf9e05fca65c4914cc5d1cfb",
-        areacode_s: "AREAS2125"
+        areacode_s: `AREAS21${randomNumber(11,99)}`
     };
     //Ajax（非同期通信）
     axios.get('https://api.gnavi.co.jp/RestSearchAPI/v3/', {

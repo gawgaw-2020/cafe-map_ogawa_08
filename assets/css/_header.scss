@@ -146,5 +146,32 @@
 /* ▼スマホ用デザイン */
 /* ------------------------------------ */
 @media screen and (max-width: 768px) {
-
+  .header {
+    &__logo {
+      margin-left: 60px;
+    }
+    &__right {
+      margin-left: auto;
+      width: 200px;
+      display: flex;
+      height: 60px;
+      p {
+        width: 100%;
+        height: 60px;
+        padding: 0;
+        line-height: 60px;
+        a {
+          font-size: 1.2rem;
+          color: #fff;
+        }
+      }
+      .tutorial {
+        background-color: #F0F6FA;
+        a {
+          color: #999;
+        }
+      }
+    }
+  }
+  
 }

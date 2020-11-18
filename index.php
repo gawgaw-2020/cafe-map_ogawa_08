@@ -1,6 +1,6 @@
 <?php
 
-define("title" ,"モニカツ｜原宿朝活情報");
+define("title" ,"モニカツ｜朝活情報");
 
 ?>
 
@@ -8,7 +8,12 @@ define("title" ,"モニカツ｜原宿朝活情報");
 <?php include(dirname(__FILE__).'/assets/_inc/_header.php'); ?>
 
 <main>
-  <div class="color-box color-01"></div>
+  <!-- <p>朝活したい人のためのアプリ</p>
+  <p>朝カフェ登録は「朝活した投稿」に変更？</p>
+  <p>朝カフェを探すは「みんなの朝活ログ」に変更？</p>
+  <p>（連続何日とか「いいね」とか）</p> -->
+
+  <!-- <div class="color-box color-01"></div>
   <div class="color-box color-02"></div>
   <div class="color-box color-03"></div>
   <div class="color-box color-04"></div>
@@ -89,7 +94,13 @@ define("title" ,"モニカツ｜原宿朝活情報");
   <button type="submit" class="btn btn--orange btn--link_orange">カラーボタン</button>
   <button type="submit" class="btn btn--green btn--link_green">カラーボタン</button>
   <button type="submit" class="btn btn--red btn--link_red">カラーボタン</button>
-  <button type="submit" class="btn btn--yellow btn--link_yellow">カラーボタン</button>
+  <button type="submit" class="btn btn--yellow btn--link_yellow">カラーボタン</button> -->
 
 
 </main>
+
+<?php include(dirname(__FILE__).'/assets/_inc/_footer.php'); ?>
+
+
+</body>
+</html>

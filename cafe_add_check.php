@@ -17,22 +17,30 @@ $power_source = $_POST['power_source'];
 $menu = $_POST['menu'];
 $pass = $_POST['pass'];
 $pro_gazou = $_FILES['gazou'];
-
+// $pro_gazou{'name'}
+// $pro_gazou['tmp_name']
 
 // エラーチェック
 
 if ($store_name === '') {
   $error[] = '店名が入力されていません。';
 }
+if ($station === '') {
+  $error[] = '最寄駅が入力されていません。';
+}
+if ($open_time === '') {
+  $error[] = '開店時間が入力されていません。';
+}
+if ($store_memo === '') {
+  $error[] = '一言メモが入力されていません。';
+}
 
 if ($pro_gazou['size'] > 0) {
-  if ($pro_gazou['size'] > 10000000) {
-    $error[] = '画像が大きすぎます';
-  } else {
-    move_uploaded_file($pro_gazou['tmp_name'], './assets/img/srore_img/' . $pro_gazou['name']);
-    $dis_gazou = '<img src="/cafe-map_ogawa_08/assets/img/srore_img/'.$pro_gazou['name'].'">';
-  }
+  move_uploaded_file($pro_gazou['tmp_name'], './assets/img/srore_img/' . $pro_gazou['name']);
+  $dis_gazou = '<img src="/cafe-map_ogawa_08/assets/img/srore_img/'.$pro_gazou['name'].'">';
 }
+
+
 
 
 
@@ -46,7 +54,7 @@ if ($pro_gazou['size'] > 0) {
       <!-- 見出しここに入れる -->
       <?php
       // エラーに合致したら
-      if($store_name === ''): ?>
+      if($store_name === '' || $station === '' || $open_time === '' || $store_memo === ''): ?>
         <?php for ($i = 0; $i < count($error); $i++): ?>
         <!-- ここにエラーを表示 -->
           <p class="input-error-message"><?= $error[$i]; ?></p>
@@ -102,3 +110,8 @@ if ($pro_gazou['size'] > 0) {
   </section>
 
 </main>
+
+<?php include(dirname(__FILE__).'/assets/_inc/_footer.php'); ?>
+
+</body>
+</html>

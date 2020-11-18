@@ -44,14 +44,8 @@ $data = array(
 
 createCsv($data,'test');
 
+header('Location: /cafe-map_ogawa_08/cafe_disp.php');
+exit();
 
 
 ?>
-<?php include(dirname(__FILE__).'/assets/_inc/_head.php'); ?>
-<?php include(dirname(__FILE__).'/assets/_inc/_header.php'); ?>
-
-<main>
-登録が完了しました画面
-<a class="btn btn--blue btn--link_blue" href="/cafe-map_ogawa_08/cafe_add.php">続けて登録する</a>
-<a class="btn btn--transparent btn--link_transparent" href="/cafe-map_ogawa_08/cafe_disp.php">朝カフェ一覧へ</a>
-</main>

@@ -25,10 +25,11 @@ function csvToArray($csvPath){
     }
   }
   fclose($file);
-  return $csvArray;
+  return array_reverse($csvArray);
 }
 
 $cafe_data = csvToArray("./AutoCreateCsv/test.csv");
+
 
 ?>
 <?php include(dirname(__FILE__).'/assets/_inc/_head.php'); ?>
@@ -40,6 +41,11 @@ $cafe_data = csvToArray("./AutoCreateCsv/test.csv");
       <h1 class="level1-heading">朝カフェ</h1>
       <ul class="store-list">
         <?php foreach ($cafe_data as $value): ?>
+          <?php
+            if ($value['pro_gazou'] === '') {
+              $value['pro_gazou'] = '6C243241-27EB-4DF4-BC9B-7E3571BEB674_1_201_a.jpeg';
+            }
+            ?>
           <li class="store-card">
             <p class="store-card__image"><img src="/cafe-map_ogawa_08/assets/img/srore_img/<?php echo $value['pro_gazou'] ?>"></p>
             <div class="store-card__detail">
@@ -62,6 +68,9 @@ $cafe_data = csvToArray("./AutoCreateCsv/test.csv");
     </div>
   </section>
 </main>
+
+<?php include(dirname(__FILE__).'/assets/_inc/_footer.php'); ?>
+
 <script>
   var $grid = $('.store-list'),   
     emptyCells = [],

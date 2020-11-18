@@ -310,10 +310,15 @@
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.13) 0px 1px 6px 0px;
   margin: 0 auto 24px;
+  display: flex;
+  flex-direction: column;
   &__image {
     border-radius: 10px 10px 0 0;
     overflow: hidden;
     height: 165px;
+    img {
+      transform: translateY(-10%);
+    }
   }
   &__detail {
     padding: 1em;
@@ -324,20 +329,24 @@
     margin-right: 5px;
   }
   &__name {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: bold;
+    margin-bottom: 2px;
   }
   .detail-right {
     background-color:  #F0F6FA;
     color:  #78B2D1;
     position: absolute;
-    top: 0;
+    top: -27px;
     right: 0;
   }
   &__open-time {
+    font-size: 1.4rem;
+    font-weight: bold;
     padding: 0.2em 1em;
   }
   &__footer {
+    margin-top: auto;
     border-top: 1px dotted #ccc;
     color: #777;
     display: flex;

@@ -427,12 +427,24 @@ img {
   -webkit-box-shadow: rgba(0, 0, 0, 0.13) 0px 1px 6px 0px;
           box-shadow: rgba(0, 0, 0, 0.13) 0px 1px 6px 0px;
   margin: 0 auto 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .store-card__image {
   border-radius: 10px 10px 0 0;
   overflow: hidden;
   height: 165px;
+}
+
+.store-card__image img {
+  -webkit-transform: translateY(-10%);
+          transform: translateY(-10%);
 }
 
 .store-card__detail {
@@ -448,23 +460,27 @@ img {
 }
 
 .store-card__name {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: bold;
+  margin-bottom: 2px;
 }
 
 .store-card .detail-right {
   background-color: #F0F6FA;
   color: #78B2D1;
   position: absolute;
-  top: 0;
+  top: -27px;
   right: 0;
 }
 
 .store-card__open-time {
+  font-size: 1.4rem;
+  font-weight: bold;
   padding: 0.2em 1em;
 }
 
 .store-card__footer {
+  margin-top: auto;
   border-top: 1px dotted #ccc;
   color: #777;
   display: -webkit-box;
@@ -644,9 +660,54 @@ li.store-card {
   font-size: 1.4rem;
 }
 
+.footer {
+  display: none;
+}
+
 /* ------------------------------------ */
 /* タブレット用デザイン */
 /* ------------------------------------ */
+@media screen and (max-width: 1024px) {
+  .gnavi {
+    display: none;
+  }
+  .footer {
+    display: block;
+    margin-bottom: 48px;
+  }
+  .global-nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: white;
+  }
+  .nav-list {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+  .nav-item {
+    display: table-cell;
+    border: solid 1px gray;
+    padding: 4px 0px;
+  }
+  .nav-item a {
+    text-decoration: none;
+  }
+  .nav-item i {
+    display: block;
+    font-size: 24px;
+  }
+  .nav-item a span {
+    display: block;
+    font-size: 10px;
+  }
+}
+
 /* ------------------------------------ */
 /* ▼スマホ用デザイン */
 /* ------------------------------------ */
@@ -674,6 +735,16 @@ li.store-card {
 .cafe-add {
   padding-top: 40px;
   padding-bottom: 120px;
+}
+
+.cafe-add #input-test {
+  text-align: center;
+  width: 350px;
+  cursor: pointer;
+  padding: 0.5em;
+  margin: 0 auto 2em;
+  background-color: #FFEA5D;
+  border-radius: 10px;
 }
 
 .cafe-add form {

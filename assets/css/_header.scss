@@ -90,12 +90,55 @@
   }
 }
 
+.footer {
+  display: none;
+}
+
 /* ------------------------------------ */
 /* タブレット用デザイン */
 /* ------------------------------------ */
 @media screen and (max-width: 1024px) {
   
-  
+
+.gnavi {
+  display: none;
+}
+
+.footer {
+  display: block;
+  margin-bottom: 48px;
+}
+.global-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: white;
+}
+.nav-list {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+.nav-item {
+  display: table-cell;
+  border: solid 1px gray;
+  padding: 4px 0px;
+}
+.nav-item a {
+  text-decoration: none;
+}
+.nav-item i {
+  display: block;
+  font-size: 24px;
+}
+.nav-item a span {
+  display: block;
+  font-size: 10px;
+}  
   
 }
 

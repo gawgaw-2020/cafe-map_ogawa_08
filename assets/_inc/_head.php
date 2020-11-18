@@ -9,12 +9,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@gawgaw_2020">
   <meta name="twitter:title" content="モニカツ｜朝活情報アプリ">
-  <meta name="twitter:description" content="モニカツ｜朝活情報アプリ">
-  <meta name="twitter:image" content="#">
+  <meta name="twitter:description" content="「モニカツ」は朝活情報アプリです。朝活の投稿や朝活イベントをまとめています。">
+  <meta name="twitter:image" content="/cafe-map_ogawa_08/assets/img/pablo-839.png">
   <!-- stylesheet -->
   <link rel="stylesheet" href="/cafe-map_ogawa_08/assets/css/style.css">
   <!-- fontawesome -->
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>

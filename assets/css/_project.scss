@@ -1,0 +1,45 @@
+.cafe-disp {
+  padding-top: 40px;
+  padding-bottom: 120px;
+  @include mq(md) {
+    padding-top: 60px;
+  }
+  .store-list {
+    @include mq(md) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.cafe-add {
+  padding-top: 40px;
+  padding-bottom: 120px;
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    .form-btns {
+      text-align: center;
+      button {
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+.cafe-add-check {
+  padding-top: 40px;
+  padding-bottom: 120px;
+  dl {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .form-btns {
+    margin-top: 32px;
+    text-align: center;
+    button {
+      margin-right: 16px;
+      margin-bottom: 16px;
+    }
+  }
+}

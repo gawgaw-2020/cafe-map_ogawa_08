@@ -37,10 +37,11 @@ $cafe_data = csvToArray("./AutoCreateCsv/test.csv");
 <main>
   <section class="cafe-disp">
     <div class="section-inner">
+      <h1 class="level1-heading">朝カフェ</h1>
       <ul class="store-list">
         <?php foreach ($cafe_data as $value): ?>
           <li class="store-card">
-            <p class="store-card__image"><img src="/cafe-map_ogawa_08/assets/img/srore_img/54F19468-BF33-48CA-8541-B46AB6CD0895_1_105_c.jpg" alt=""></p>
+            <p class="store-card__image"><img src="/cafe-map_ogawa_08/assets/img/srore_img/<?php echo $value['pro_gazou'] ?>"></p>
             <div class="store-card__detail">
               <div class="detail-left">
                 <p class="store-card__name"><?php echo $value['store_name'] ?></p>
@@ -61,4 +62,17 @@ $cafe_data = csvToArray("./AutoCreateCsv/test.csv");
     </div>
   </section>
 </main>
+<script>
+  var $grid = $('.store-list'),   
+    emptyCells = [],
+    i;
 
+    // アイテム (li.item) の数だけ空のアイテム (li.cell.is-empty) を生成
+    for (i = 0; i < $grid.find('.store-card').length; i++) {
+        emptyCells.push($('<li>', { class: 'store-card is-empty' }));
+    }
+
+    $grid.append(emptyCells);
+</script>
+</body>
+</html>

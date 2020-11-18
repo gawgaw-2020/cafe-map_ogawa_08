@@ -22,13 +22,20 @@
 
 .level1-heading {
   max-width: 1100px;
-  margin: 0 auto 20px;
+  margin: 0 auto 40px;
   padding: 8px 0;
   border-top: 1px solid #55595c;
   border-bottom: 1px solid #55595c;
   font-size: 2.4rem;
   font-weight: 200;
   text-align: center;
+}
+
+// セクションのインナー
+.section-inner {
+  max-width: 1350px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 // 入力部品
@@ -39,7 +46,6 @@
 }
 
 .input-box {
-  width: 280px;
   height: 50px;
   position: relative;
   z-index: 800;
@@ -167,7 +173,24 @@
   }
 } 
 
-
+.file-box {
+  width: auto;
+  position: relative;
+  z-index: 800;
+  margin-bottom: 30px;
+  &__title {
+    border-radius: 12px;
+    position: absolute;
+    z-index: 801;
+    top: -8px;
+    left: 16px;
+    padding: 0 1em;
+    background-color: #fff;
+  }
+  &__data {
+    padding: 16px 0;
+  }
+}
 
 
 // ボタン
@@ -283,13 +306,14 @@
 
 .store-card {
   font-size: 1.2rem;
-  width: 330px;
+  width: 350px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.13) 0px 1px 6px 0px;
-  margin: 0 auto 16px;
+  margin: 0 auto 24px;
   &__image {
     border-radius: 10px 10px 0 0;
     overflow: hidden;
+    height: 165px;
   }
   &__detail {
     padding: 1em;
@@ -330,5 +354,37 @@
   }
   &__power-source {
     margin-right: 16px;
+  }
+}
+
+ul.store-list {
+  justify-content: space-between;
+}
+
+li.store-card {
+  /* 最低限の余白 */
+  margin: 0 auto 30px;
+}
+
+.store-card.is-empty {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.cafe-data-list {
+  &__title {
+    padding: 0.5em;
+    font-size: 1.4rem;
+  }
+  &__data {
+    padding: 0.5em 3em;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  .disp-image {
+    max-width: 300px;
   }
 }

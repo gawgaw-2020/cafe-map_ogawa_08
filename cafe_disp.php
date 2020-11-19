@@ -68,6 +68,13 @@ $cafe_data = csvToArray("./AutoCreateCsv/test.csv");
     </div>
   </section>
 </main>
+<?PHP
+
+echo '<pre>';
+var_dump($cafe_data);
+echo '</pre>';
+
+?>
 
 <?php include(dirname(__FILE__).'/assets/_inc/_footer.php'); ?>
 

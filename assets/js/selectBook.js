@@ -13,5 +13,8 @@ function selectBook(self) {
   $('#js-input-book_memo').val(selectedDescription);
   $('#js-input-book_published').val(selectedPublishedDate);
   $('#js-preview-image').attr('src', selectedImageUrl);
+  $('#js-hidden-image').attr('value', selectedImageUrl);
+
+  localStorage.setItem('searchBookUrl', selectedImageUrl);
 
 }

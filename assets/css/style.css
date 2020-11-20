@@ -539,6 +539,26 @@ li.store-card {
   max-width: 300px;
 }
 
+.book-data-list__title {
+  padding: 0.5em;
+  font-size: 1.4rem;
+}
+
+.book-data-list__data {
+  padding: 0.5em 3em;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.book-data-list .disp-image {
+  max-width: 300px;
+}
+
+.result-item {
+  height: 300px;
+  overflow: hidden;
+}
+
 .header {
   position: -webkit-sticky;
   position: sticky;
@@ -808,6 +828,26 @@ li.store-card {
 }
 
 .cafe-add-check .form-btns button {
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
+.book-add-check {
+  padding-top: 40px;
+  padding-bottom: 120px;
+}
+
+.book-add-check dl {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.book-add-check .form-btns {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.book-add-check .form-btns button {
   margin-right: 16px;
   margin-bottom: 16px;
 }

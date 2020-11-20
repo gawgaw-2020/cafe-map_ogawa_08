@@ -397,3 +397,23 @@ li.store-card {
     max-width: 300px;
   }
 }
+
+.book-data-list {
+  &__title {
+    padding: 0.5em;
+    font-size: 1.4rem;
+  }
+  &__data {
+    padding: 0.5em 3em;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  .disp-image {
+    max-width: 300px;
+  }
+}
+
+.result-item {
+  height: 300px;
+  overflow: hidden;
+}

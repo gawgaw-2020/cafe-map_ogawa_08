@@ -46,9 +46,10 @@ define("title" ,"おすすめ書籍登録画面");
         <dl class="file-box">
           <dt class="file-box__title">書籍画像</dt>
           <dd class="file-box__data"><input id="gazou" type="file" name="gazou" onchange="loadImage(this);"></dd>
-          <dd><p id="preview"><img id="js-preview-image" src="" alt="書籍画像のプレビュー表示"></p></dd>
+          <dd><p id="preview"><img id="js-preview-image" src="/cafe-map_ogawa_08/assets/img/book_img/20201120054653content?id=Wx1dLwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api.jpg" alt="書籍画像のプレビュー表示"></p></dd>
         </dl>
         <div class="form-btns">
+          <input id="js-hidden-image" type="hidden" name="selected_image_url" value="">
           <button class="btn btn--blue btn--link_blue" type="submit">入力内容を確認する</button>
           <a href="/cafe-map_ogawa_08/" class="btn btn--transparent btn--link_transparent" type="submit">戻る</a>
         </div>

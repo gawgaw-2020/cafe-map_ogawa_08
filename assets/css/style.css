@@ -700,6 +700,7 @@ li.store-card {
     text-decoration: none;
   }
   .nav-item i {
+    color: #555;
     display: block;
     font-size: 24px;
   }

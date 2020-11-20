@@ -10,8 +10,8 @@
       </div>
       <div class="gnavi">
         <ul class="gnavi__list">
-          <li class="gnavi__item"><a class="gnavi__link" href="/cafe-map_ogawa_08/"><span>朝活イベントをさがす</span></a></li>
-          <li class="gnavi__item"><a class="gnavi__link" href="/cafe-map_ogawa_08/"><span>朝活イベントをつくる</span></a></li>
+        <li class="gnavi__item <?php if ($page === 'dispbook') { echo 'gnavi__item--active';} ?>"><a class="gnavi__link" href="/cafe-map_ogawa_08/book_disp.php"><span>おすすめ書籍をさがす</span></a></li>
+          <li class="gnavi__item <?php if ($page === 'addbook') { echo 'gnavi__item--active';} ?>"><a class="gnavi__link" href="/cafe-map_ogawa_08/book_add.php"><span>本を登録する</span></a></li>
           <li class="gnavi__item <?php if ($page === 'dispcafe') { echo 'gnavi__item--active';} ?>"><a class="gnavi__link" href="/cafe-map_ogawa_08/cafe_disp.php"><span>朝カフェをさがす</span></a></li>
           <li class="gnavi__item <?php if ($page === 'addcafe') { echo 'gnavi__item--active';} ?>"><a class="gnavi__link" href="/cafe-map_ogawa_08/cafe_add.php"><span>朝カフェを登録する</span></a></li>
         </ul>

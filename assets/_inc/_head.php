@@ -14,7 +14,7 @@
   <!-- stylesheet -->
   <link rel="stylesheet" href="/cafe-map_ogawa_08/assets/css/style.css">
   <!-- fontawesome -->
-  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/efb98c9b55.js" crossorigin="anonymous"></script>
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

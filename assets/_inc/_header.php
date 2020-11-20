@@ -18,7 +18,7 @@
       </div>
       <div class="header__right">
         <p class="btn btn--blue btn--link_blue login"><a href="/cafe-map_ogawa_08/">ログイン</a></p>
-        <p class="btn btn--blue btn--link_blue tutorial"><a href="/cafe-map_ogawa_08/">はじめての方</a></p>
+        <p class="btn btn--blue btn--link_blue tutorial"><a href="/cafe-map_ogawa_08/">マイページ</a></p>
       </div>
     </div>
   </header>

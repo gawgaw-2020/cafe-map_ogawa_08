@@ -1,9 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);	 	 
-ini_set('display_startup_errors', 1);	 	 
-error_reporting(E_ALL);
-
 $page = 'dispbook';
 define("title" ,"おすすめ書籍一覧画面");
 

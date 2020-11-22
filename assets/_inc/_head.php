@@ -13,6 +13,8 @@
   <meta name="twitter:image" content="/cafe-map_ogawa_08/assets/img/pablo-839.png">
   <!-- stylesheet -->
   <link rel="stylesheet" href="/cafe-map_ogawa_08/assets/css/style.css">
+  <!-- animate.css -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
   <!-- fontawesome -->
   <script src="https://kit.fontawesome.com/efb98c9b55.js" crossorigin="anonymous"></script>
   <!-- jQuery -->

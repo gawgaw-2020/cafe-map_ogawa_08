@@ -9,17 +9,31 @@ define("title" ,"おすすめ書籍登録画面");
 <?php include(dirname(__FILE__).'/assets/_inc/_head.php'); ?>
 <?php include(dirname(__FILE__).'/assets/_inc/_header.php'); ?>
 
+<!--DEMO01-->
+<div id="animatedModal">
+    <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
+    <div class="close-animatedModal"> 
+        <p><i class="fas fa-times"></i></p>
+    </div>
+        
+    <div class="modal-content">
+        <!--Your modal content goes here-->
+        <div id="interactive" class="viewport"></div>
+    </div>
+</div>
+
 <main>
   <section class="cafe-add">
     <div class="section-inner">
       <h1 class="level1-heading">おすすめ書籍登録</h1>
 
-      <div class="bar-code_search">
 
+      <div class="bar-code_search">
+        <a href="#animatedModal" id="js-bar-code_search-start">バーコード検索</a>
       </div>
       
       <div class="google-books_search">
-        <input type="text" id='search_word' placeholder="けんさく">
+        <input type="text" id='search_word' placeholder="検索">
         <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
         <button type='search' id='search'>検索</button>
       </div>
@@ -63,7 +77,11 @@ define("title" ,"おすすめ書籍登録画面");
 <script src="/cafe-map_ogawa_08/assets/js/selectBook.js"></script>
 <script src="/cafe-map_ogawa_08/assets/js/google-books.js"></script>
 <script src="/cafe-map_ogawa_08/assets/js/image-preview.js"></script>
+<script src="/cafe-map_ogawa_08/assets/js/animatedModal.min.js"></script>
+<script type="text/javascript" src="https://serratus.github.io/quaggaJS/examples/js/quagga.min.js"></script>
+<script src="/cafe-map_ogawa_08/assets/js/quagga.js"></script>
 <script>
+  $("#js-bar-code_search-start").animatedModal();
 </script>
 </body>
 </html>

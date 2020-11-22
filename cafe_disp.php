@@ -70,9 +70,6 @@ $cafe_data = csvToArray("./AutoCreateCsv/test.csv");
 </main>
 <?PHP
 
-echo '<pre>';
-var_dump($cafe_data);
-echo '</pre>';
 
 ?>
 

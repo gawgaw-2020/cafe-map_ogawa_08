@@ -11,7 +11,7 @@ $('#search').on('click', function(){
             for(let i = 0; i < data.items.length; i++){
                 let item = data.items[i];
                 view += '<li id="' + item.id + '" class="result-item" style="width:50px;" onclick="selectBook(this);">';
-                view += '<p class="result-item__image"><img class="image" src="' + item.volumeInfo.imageLinks.smallThumbnail + '"></p>';
+                view += '<p class="result-item__image"><img class="image" src="' + item.volumeInfo.imageLinks.thumbnail + '"></p>';
                 view += '<p class="result-item__title">題名：<span class="title-text">' + item.volumeInfo.title + '</span></p>';
                 view += '<p class="result-item__authors">著者：<span class="authors-text">' + item.volumeInfo.authors + '</span></p>';
                 view += '<p class="result-item__description">説明：<span class="description-text">' + item.volumeInfo.description + '</span></p>';

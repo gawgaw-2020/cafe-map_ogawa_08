@@ -3,32 +3,38 @@
 $page = 'dispbook';
 define("title" ,"おすすめ書籍一覧画面");
 
-// csvの1列目をキーにした連想配列を返す（引数：csvファイルのパス）
-function csvToArray($csvPath){
-  $csvArray = array();
-  $firstFlg = true;
-  $keys = array();
-  $count = 0;
-  $file = fopen($csvPath, 'r');
+try {
 
-  while ($line = fgetcsv($file)) {
-    if($firstFlg){
-      for($i = 0; $i < count($line); $i++){
-        array_push($keys,$line[$i]);
-      }
-      $firstFlg = false;
-    }else{
-      for($i = 0; $i < count($line); $i++){
-        $csvArray[$count][$keys[$i]] = $line[$i];
-      }
-      $count++;
-    }
+  require_once (dirname(__FILE__) . '/assets/functions/dbconnect.php');
+
+  if (isset($_REQUEST['page'])) {
+    $page = $_REQUEST['page'];
+  } else {
+    $page = 1;
   }
-  fclose($file);
-  return array_reverse($csvArray);
-}
 
-$cafe_data = csvToArray("./AutoCreateCsv/test.csv");
+  $page = max($page, 1);
+
+  $counts = $dbh->query('SELECT COUNT(*) AS cnt FROM books');
+  $cnt = $counts->fetch();
+  $maxpage = ceil($cnt['cnt'] / 6);
+  $page = min($page, $maxpage);
+
+  $start = ($page - 1) * 6;
+
+  $sql = 'SELECT book_title, book_author, book_memo, book_published, book_image_name FROM books WHERE 1 ORDER BY book_id DESC LIMIT ?,6';
+  $stmt = $dbh->prepare($sql);
+  $stmt->bindParam(1, $start, PDO::PARAM_INT);
+  $stmt->execute();
+
+
+
+  $dbh = null;
+
+} catch(PDOException $e) {
+  print 'ただいま障害により大変ご迷惑をお掛けしております。';
+  exit();
+}
 
 
 ?>
@@ -40,39 +46,51 @@ $cafe_data = csvToArray("./AutoCreateCsv/test.csv");
     <div class="section-inner">
       <h1 class="level1-heading">おすすめ書籍一覧</h1>
       <ul class="store-list">
-        <?php foreach ($cafe_data as $value): ?>
           <?php
-            if ($value['pro_gazou'] === '') {
-              $value['pro_gazou'] = '6C243241-27EB-4DF4-BC9B-7E3571BEB674_1_201_a.jpeg';
-            }
-            ?>
+          while (true):
+            $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($rec === false) {
+            break;
+          }
+          ?>
           <li class="store-card">
-            <p class="store-card__image"><img src="/cafe-map_ogawa_08/assets/img/srore_img/<?php echo $value['pro_gazou'] ?>"></p>
+            <p class="store-card__image"><img src="/cafe-map_ogawa_08/assets/img/book_img/<?php echo $rec['book_image_name'] ?>"></p>
             <div class="store-card__detail">
               <div class="detail-left">
-                <p class="store-card__name"><?php echo $value['store_name'] ?></p>
-                <p class="store-card__memo"><?php echo $value['store_memo'] ?></p>
+                <p class="store-card__name"><?php echo $rec['book_title'] ?></p>
+                <p class="store-card__memo"><?php echo $rec['book_title'] ?></p>
               </div>
               <div class="detail-right">
-                <p class="store-card__open-time"><?php echo $value['open_time'] ?></p>
+                <p class="store-card__open-time"><?php echo $rec['book_title'] ?></p>
               </div>
             </div>
             <div class="store-card__footer">
-              <p class="store-card__station">最寄駅<span><?php echo $value['station'] ?></span></p>
-              <p class="store-card__wifi">Wifi<span><?php echo $value['wifi'] ?></span></p>
-              <p class="store-card__power-source">電源<span><?php echo $value['power_source'] ?></span></p>
+              <p class="store-card__station">最寄駅<span><?php echo $rec['book_title'] ?></span></p>
+              <p class="store-card__wifi">Wifi<span><?php echo $rec['book_title'] ?></span></p>
+              <p class="store-card__power-source">電源<span><?php echo $rec['book_title'] ?></span></p>
             </div>
           </li>
-        <?php endforeach; ?>
+          <?php endwhile; ?>
       </ul>
+      <div class="pagenation">
+        <?php if($page > 1): ?>
+          <a href="book_disp.php?page=<?= $page-1; ?>" class="pagenation__left"><i class="fas fa-angle-double-left"></i></a>
+        <?php else: ?>
+          <a href="book_disp.php?page=<?= $page-1; ?>" class="pagenation__left--disable"></a>
+        <?php endif; ?>
+
+        <?php if($page < $maxpage): ?>
+          <a href="book_disp.php?page=<?= $page+1; ?>" class="pagenation__right"><i class="fas fa-angle-double-right"></i></a>
+        <?php else: ?>
+          <a href="book_disp.php?page=<?= $page-1; ?>" class="pagenation__right--disable"></a>
+        <?php endif; ?>
+
+      </div>
     </div>
   </section>
 </main>
 <?PHP
 
-echo '<pre>';
-var_dump($cafe_data);
-echo '</pre>';
 
 ?>
 

@@ -559,6 +559,40 @@ li.store-card {
   overflow: hidden;
 }
 
+.pagenation {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.pagenation__left, .pagenation__right {
+  color: #55595c;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.pagenation__left:hover, .pagenation__right:hover {
+  opacity: .8;
+  background-color: #ddd;
+}
+
+.pagenation__left--disable, .pagenation__right--disable {
+  opacity: 0;
+}
+
 .header {
   position: -webkit-sticky;
   position: sticky;

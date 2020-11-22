@@ -417,3 +417,31 @@ li.store-card {
   height: 300px;
   overflow: hidden;
 }
+
+// ページネーション
+.pagenation {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  &__left,
+  &__right {
+    color: #55595c;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: .2s;
+    &:hover {
+      opacity: .8;
+      background-color: #ddd;
+    }
+    &--disable {
+      opacity: 0;
+    }
+  }
+}

@@ -29,24 +29,24 @@ define("title" ,"おすすめ書籍登録画面");
       <form action="book_add_check.php" method="post" enctype="multipart/form-data">
         <div class="input-box">
           <label class="input-box__label" for="js-input-book_name">書籍名<span class="required">※必須</span></label>
-          <input id="js-input-book_name" class="input-box__input" type="text" name="book_name" autocomplete="off" autofocus >
+          <input id="js-input-book_name" class="input-box__input" type="text" name="book_name"  autofocus >
         </div>
         <div class="input-box">
           <label class="input-box__label" for="js-input-book_author">著者</label>
-          <input id="js-input-book_author" class="input-box__input" type="text" name="book_author" autocomplete="off">
+          <input id="js-input-book_author" class="input-box__input" type="text" name="book_author">
         </div>
         <div class="input-box">
           <label class="input-box__label" for="js-input-book_memo">一言コメント</label>
-          <input id="js-input-book_memo" class="input-box__input" type="text" name="book_memo" autocomplete="off">
+          <input id="js-input-book_memo" class="input-box__input" type="text" name="book_memo">
         </div>
         <div class="input-box">
           <label class="input-box__label" for="js-input-book_published">出版年月日</label>
-          <input id="js-input-book_published" class="input-box__input" type="text" name="book_published" autocomplete="off">
+          <input id="js-input-book_published" class="input-box__input" type="text" name="book_published">
         </div>
         <dl class="file-box">
           <dt class="file-box__title">書籍画像</dt>
           <dd class="file-box__data"><input id="gazou" type="file" name="gazou" onchange="loadImage(this);"></dd>
-          <dd><p id="preview"><img id="js-preview-image" src="/cafe-map_ogawa_08/assets/img/book_img/20201120054653content?id=Wx1dLwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api.jpg" alt="書籍画像のプレビュー表示"></p></dd>
+          <dd><p id="preview"><img id="js-preview-image" src="" alt="書籍画像のプレビュー表示"></p></dd>
         </dl>
         <div class="form-btns">
           <input id="js-hidden-image" type="hidden" name="selected_image_url" value="">

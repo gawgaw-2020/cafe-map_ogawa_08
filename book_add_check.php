@@ -20,7 +20,6 @@ $img_url = array(
 
 $book_gazou = $_FILES['gazou'];
 
-
 // エラーチェック
 
 if ($book_name === '') {
@@ -42,6 +41,7 @@ if ($book_gazou['size'] > 0) {
     $data = file_get_contents($value);
     file_put_contents('./assets/img/book_img/'.$filename,$data);
     $dis_gazou = '<img src="/cafe-map_ogawa_08/assets/img/book_img/'.$filename.'">';
+    $book_gazou['name'] = $filename;
   }
 }
 

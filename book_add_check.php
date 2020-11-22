@@ -4,7 +4,7 @@ require_once (dirname(__FILE__) . '/assets/functions/common.php');
 
 
 // ページ情報
-$page = 'addbook';
+$pagerole = 'addbook';
 define("title" ,"おすすめ書籍登録 -確認画面-");
 
 $book_name = $_POST['book_name'];
@@ -75,8 +75,8 @@ if ($book_gazou['size'] > 0) {
           <dd class="book-data-list__data"><?= h($book_memo); ?></dd>
           <dt class="book-data-list__title">出版年月日</dt>
           <dd class="book-data-list__data"><?= h($book_published); ?></dd>
-          <dt class="staff-data-list__title">店舗画像</dt>
-          <dd class="staff-data-list__data disp-image"><?= $dis_gazou; ?></dd>
+          <dt class="staff-data-list__title">書籍画像</dt>
+          <dd class="staff-data-list__data disp-image max-w200"><?= $dis_gazou; ?></dd>
         </dl>
         <form method="post" action="book_add_done.php">
           <div class="#">

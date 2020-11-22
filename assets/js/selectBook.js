@@ -1,12 +1,24 @@
 function selectBook(self) {
+  $('#js-preview-image').show();
+  $('#gazou').remove();
 
-  const selectedTargetID = self.getAttribute('id');
+  let selectedTargetID = self.getAttribute('id');
 
-  const selectedTitle = $(`#${selectedTargetID}`).find('.title-text')[0].innerHTML;
-  const selectedAuthor = $(`#${selectedTargetID}`).find('.authors-text')[0].innerHTML;
-  const selectedDescription = $(`#${selectedTargetID}`).find('.description-text')[0].innerHTML;
-  const selectedPublishedDate = $(`#${selectedTargetID}`).find('.published-date-text')[0].innerHTML;
-  const selectedImageUrl = $(`#${selectedTargetID}`).find('.image').attr('src');
+  let selectedTitle = $(`#${selectedTargetID}`).find('.title-text')[0].innerHTML;
+  let selectedAuthor = $(`#${selectedTargetID}`).find('.authors-text')[0].innerHTML;
+  let selectedDescription = $(`#${selectedTargetID}`).find('.description-text')[0].innerHTML;
+  let selectedPublishedDate = $(`#${selectedTargetID}`).find('.published-date-text')[0].innerHTML;
+  let selectedImageUrl = $(`#${selectedTargetID}`).find('.image').attr('src');
+
+  if (selectedAuthor === 'undefined') {
+    selectedAuthor = '';
+  }
+  if (selectedDescription == 'undefined') {
+    selectedDescription = '';
+  }
+  if (selectedPublishedDate === 'undefined') {
+    selectedPublishedDate = '';
+  }
 
   $('#js-input-book_name').val(selectedTitle);
   $('#js-input-book_author').val(selectedAuthor);

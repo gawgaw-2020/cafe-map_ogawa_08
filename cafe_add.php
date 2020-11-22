@@ -2,7 +2,7 @@
 
 require_once (dirname(__FILE__) . '/assets/functions/common.php');
 
-$page = 'addcafe';
+$pagerole = 'addcafe';
 define("title" ,"朝カフェ登録画面");
 
 ?>

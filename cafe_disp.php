@@ -1,6 +1,6 @@
 <?php
 
-$page = 'dispcafe';
+$pagerole = 'dispcafe';
 define("title" ,"朝カフェ一覧画面");
 
 // csvの1列目をキーにした連想配列を返す（引数：csvファイルのパス）

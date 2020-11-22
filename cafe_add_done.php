@@ -3,7 +3,7 @@
 require_once (dirname(__FILE__) . '/assets/functions/common.php');
 
 // ページ情報
-$page = 'addcafe';
+$pagerole = 'addcafe';
 define("title" ,"朝カフェ登録 -完了画面-");
 
 // var_dump($_POST);

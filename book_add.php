@@ -2,7 +2,7 @@
 
 require_once (dirname(__FILE__) . '/assets/functions/common.php');
 
-$page = 'addbook';
+$pagerole = 'addbook';
 define("title" ,"おすすめ書籍登録画面");
 
 ?>
@@ -64,7 +64,7 @@ define("title" ,"おすすめ書籍登録画面");
         <dl class="file-box">
           <dt class="file-box__title">書籍画像</dt>
           <dd class="file-box__data"><input id="gazou" type="file" name="gazou" onchange="loadImage(this);"></dd>
-          <dd><p id="preview"><img id="js-preview-image" src="" alt="書籍画像のプレビュー表示"></p></dd>
+          <dd class="max-w200"><p id="preview"><img id="js-preview-image" src="" alt="書籍画像のプレビュー表示"></p></dd>
         </dl>
         <div class="form-btns">
           <input id="js-hidden-image" type="hidden" name="selected_image_url" value="">
@@ -85,7 +85,10 @@ define("title" ,"おすすめ書籍登録画面");
 <script type="text/javascript" src="https://serratus.github.io/quaggaJS/examples/js/quagga.min.js"></script>
 <script src="/cafe-map_ogawa_08/assets/js/quagga.js"></script>
 <script>
-  $("#js-bar-code_search-start").animatedModal();
+  $('#js-preview-image').hide();
+  $("#js-bar-code_search-start").animatedModal({
+    color: '#78B2D1'
+  });
 </script>
 </body>
 </html>

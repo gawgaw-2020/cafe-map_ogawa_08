@@ -12,6 +12,20 @@
   }
 }
 
+.book-disp {
+  padding-top: 40px;
+  padding-bottom: 120px;
+  @include mq(md) {
+    padding-top: 60px;
+  }
+  .book-list {
+    @include mq(md) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
 .cafe-add {
   #input-test {
     text-align: center;

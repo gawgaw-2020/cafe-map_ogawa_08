@@ -369,13 +369,27 @@
 ul.store-list {
   justify-content: space-between;
 }
+ul.book-list {
+  justify-content: space-between;
+}
 
 li.store-card {
   /* 最低限の余白 */
   margin: 0 auto 30px;
 }
+li.book-card {
+  /* 最低限の余白 */
+  margin: 0 auto 30px;
+}
 
 .store-card.is-empty {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.book-card.is-empty {
   height: 0;
   padding-top: 0;
   padding-bottom: 0;
@@ -396,7 +410,7 @@ li.store-card {
     margin-bottom: 20px;
   }
   .disp-image {
-    max-width: 300px;
+    max-width: 200px;
   }
 }
 
@@ -412,9 +426,6 @@ li.store-card {
     font-size: 1.6rem;
     margin-bottom: 20px;
   }
-  .disp-image {
-    max-width: 300px;
-  }
 }
 
 // 検索方法選択
@@ -427,14 +438,24 @@ li.store-card {
     margin-bottom: 8px;
   }
   .book-search {
-    display: flex;
-    justify-content: center;
+    @include mq() {
+      display: flex;
+      justify-content: center;
+    }
     .google-books_search {
+      width: 100%;
+      margin-bottom: 10px;
+      text-align: center;
       background-color: #fff;
-      padding: 1em;
+      padding: 0.8em 3em;
       margin-right: 16px;
       border: 1px solid #ddd;
       border-radius: 5px;
+      @include mq() {
+        width: auto;
+        margin-bottom: 0;
+        text-align: left;
+      }  
       p {
         font-size: 1.4rem;
       }
@@ -442,7 +463,7 @@ li.store-card {
     .bar-code_search {
       font-size: 1.4rem;
       display: block;
-      padding: 1em;
+      padding: 0.8em;
       background-color: #fff;
       border: 1px solid #ddd;
       border-radius: 5px;
@@ -454,7 +475,6 @@ li.store-card {
       }
     }
   }
-
 }
 
 // 検索結果
@@ -543,3 +563,62 @@ li.store-card {
   }
 }
 
+// book card
+.book-card {
+  padding: 0.5em 0;
+  width: calc((100% / 3) - 16px);
+  min-width: 350px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .16);
+  margin-left: 8px;
+  .mr24 {
+    margin-right: 24px;
+  }
+  &__header {
+    margin-bottom: 16px;
+  }
+  &__title {
+    font-size: 1.4rem;
+    padding: 0.5em;
+  }
+  &__body {
+    display: flex;
+    overflow: hidden;
+  }
+  &__thumbnail {
+    width: 40%;
+    padding: 0 0.5em;
+  }
+  &__text {
+    font-size: 1.2rem;
+    padding: 0 0.5em;
+    margin-bottom: 5px;
+  }
+  &__memo {
+    font-size: 1.2rem;
+    width: 60%;
+    padding: 0 0.5em;
+  }
+}
+
+// モーダルのスタイル
+#animatedModal  {
+  .close-animatedModal {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    .fa-times  {
+      font-size: 5rem;
+    }
+  }
+  .modal-content {
+    padding-top: 24px;
+    text-align: center;
+  }
+}
+
+// utility
+.max-w200 {
+  max-width: 200px;
+}

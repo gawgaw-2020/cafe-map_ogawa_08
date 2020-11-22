@@ -1,6 +1,6 @@
 <?php
 
-$page = 'dispbook';
+$pagerole = 'dispbook';
 define("title" ,"おすすめ書籍一覧画面");
 
 try {
@@ -42,35 +42,30 @@ try {
 <?php include(dirname(__FILE__).'/assets/_inc/_header.php'); ?>
 
 <main>
-  <section class="cafe-disp">
+  <section class="book-disp">
     <div class="section-inner">
       <h1 class="level1-heading">おすすめ書籍一覧</h1>
-      <ul class="store-list">
-          <?php
+      <ul class="book-list">
+      <?php
           while (true):
             $rec = $stmt->fetch(PDO::FETCH_ASSOC);
             if ($rec === false) {
             break;
           }
           ?>
-          <li class="store-card">
-            <p class="store-card__image"><img src="/cafe-map_ogawa_08/assets/img/book_img/<?php echo $rec['book_image_name'] ?>"></p>
-            <div class="store-card__detail">
-              <div class="detail-left">
-                <p class="store-card__name"><?php echo $rec['book_title'] ?></p>
-                <p class="store-card__memo"><?php echo $rec['book_title'] ?></p>
-              </div>
-              <div class="detail-right">
-                <p class="store-card__open-time"><?php echo $rec['book_title'] ?></p>
-              </div>
-            </div>
-            <div class="store-card__footer">
-              <p class="store-card__station">最寄駅<span><?php echo $rec['book_title'] ?></span></p>
-              <p class="store-card__wifi">Wifi<span><?php echo $rec['book_title'] ?></span></p>
-              <p class="store-card__power-source">電源<span><?php echo $rec['book_title'] ?></span></p>
-            </div>
-          </li>
-          <?php endwhile; ?>
+        <li class="book-card">
+          <div class="book-card__header">
+            <h3 class="book-card__title"><?php echo mb_strimwidth( $rec['book_title'], 0, 40, '…', 'UTF-8' ) ?></h3>
+            <p class="book-card__text"><span class="mr24">著者：<?php echo mb_strimwidth( $rec['book_author'], 0, 25, '…', 'UTF-8' ) ?></span> 出版年月日：<?php echo $rec['book_published'] ?></p>
+          </div>
+          <div class="book-card__body">
+            <p class="book-card__thumbnail">
+              <img src="/cafe-map_ogawa_08/assets/img/book_img/<?php echo $rec['book_image_name'] ?>" alt="" class="book-card__image">
+            </p>
+            <p class="book-card__memo"><?php echo mb_strimwidth( $rec['book_memo'], 0, 300, '…', 'UTF-8' ) ?></p>
+          </div>
+        </li>
+        <?php endwhile; ?>
       </ul>
       <div class="pagenation">
         <?php if($page > 1): ?>
@@ -97,13 +92,13 @@ try {
 <?php include(dirname(__FILE__).'/assets/_inc/_footer.php'); ?>
 
 <script>
-  var $grid = $('.store-list'),   
+  var $grid = $('.book-list'),   
     emptyCells = [],
     i;
 
     // アイテム (li.item) の数だけ空のアイテム (li.cell.is-empty) を生成
-    for (i = 0; i < $grid.find('.store-card').length; i++) {
-        emptyCells.push($('<li>', { class: 'store-card is-empty' }));
+    for (i = 0; i < $grid.find('.book-card').length; i++) {
+        emptyCells.push($('<li>', { class: 'book-card is-empty' }));
     }
 
     $grid.append(emptyCells);

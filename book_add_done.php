@@ -3,7 +3,7 @@
 require_once (dirname(__FILE__) . '/assets/functions/common.php');
 
 // ページ情報
-$page = 'addbook';
+$pagerole = 'addbook';
 define("title" ,"おすすめ書籍登録 -完了画面-");
 
 

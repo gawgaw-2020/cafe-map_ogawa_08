@@ -36,6 +36,7 @@ document.getElementById('js-bar-code_search-start').addEventListener('click', ()
   if(calc(code)) {
     alert('読み取りが完了しました!!');
     
+    // 検索窓を空にする
     $('#search_word').val('');
     const resultCode = code;
 
@@ -47,6 +48,9 @@ document.getElementById('js-bar-code_search-start').addEventListener('click', ()
 
     // 検索ボタンを押させる
     $('#search').trigger("click");
+
+    // 検索窓をもう一度空にする
+    $('#search_word').val('');
 
   }
   })

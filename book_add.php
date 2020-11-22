@@ -27,18 +27,22 @@ define("title" ,"おすすめ書籍登録画面");
     <div class="section-inner">
       <h1 class="level1-heading">おすすめ書籍登録</h1>
 
+      <div class="search">
+        <div class="book-search">
+          <div class="google-books_search">
+            <p>フリーワードで検索</p>
+            <input type="text" id='search_word' placeholder="タイトル・著者名など">
+            <button type='search' id='search'>検索</button>
+          </div>
+          <a id="js-bar-code_search-start" href="#animatedModal" class="bar-code_search">
+            <p><i class="fas fa-barcode"></i></p>
+            <p>バーコード検索を<br>はじめる</p>
+          </a>
+        </div>
+      </div>
 
-      <div class="bar-code_search">
-        <a href="#animatedModal" id="js-bar-code_search-start">バーコード検索</a>
-      </div>
-      
-      <div class="google-books_search">
-        <input type="text" id='search_word' placeholder="検索">
-        <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
-        <button type='search' id='search'>検索</button>
-      </div>
       <div class="search-result">
-        <ul id="content1" class="result-list" style="display: flex;"></ul>
+        <ul id="content1" class="result-list"></ul>
       </div>
       <form action="book_add_check.php" method="post" enctype="multipart/form-data">
         <div class="input-box">

@@ -383,6 +383,8 @@ li.store-card {
   margin-bottom: 0;
 }
 
+// 店舗追加確認画面のリスト
+
 .cafe-data-list {
   &__title {
     padding: 0.5em;
@@ -397,6 +399,8 @@ li.store-card {
     max-width: 300px;
   }
 }
+
+// 書籍追加確認画面のリスト
 
 .book-data-list {
   &__title {
@@ -413,9 +417,102 @@ li.store-card {
   }
 }
 
-.result-item {
-  height: 300px;
-  overflow: hidden;
+// 検索方法選択
+
+.search {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  &__title {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .book-search {
+    display: flex;
+    justify-content: center;
+    .google-books_search {
+      background-color: #fff;
+      padding: 1em;
+      margin-right: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      p {
+        font-size: 1.4rem;
+      }
+    }
+    .bar-code_search {
+      font-size: 1.4rem;
+      display: block;
+      padding: 1em;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      p {
+        text-align: center;
+        i {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
+}
+
+// 検索結果
+
+.search-result {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  .result-list {
+    display: flex;
+    overflow-x: auto;
+    padding: 1em;
+    .result-item:not(:first-child) {
+      margin-left: 12px;
+    }
+    .result-item {
+      cursor: pointer;
+      flex: 0 0 auto;
+      width: 180px;
+      font-size: 1rem;
+      box-shadow: rgba(0, 0, 0, 0.13) 0px 1px 6px 0px;
+      position: relative;
+      border-radius: 10px;
+      transition: all 0.2s;
+      &:hover {
+        transform: translateY(-6px);
+      }
+      &__image {
+        height: 170px;
+        overflow: hidden;
+        margin-bottom: 5px;
+      border-radius: 10px 10px 0 0;
+      }
+      &__title {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        padding-left: 5px;
+      }
+      &__authors {
+        margin-bottom: 25px;
+        padding-left: 5px;
+      }
+      &__description {
+        display: none;
+      }
+      &__published-date {
+        display: none;
+      }
+      &__more {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        width: 100px;
+        display: block;
+        margin-left: auto;
+        font-size: 1rem;
+      }
+    }
+  }
 }
 
 // ページネーション
@@ -445,3 +542,4 @@ li.store-card {
     }
   }
 }
+

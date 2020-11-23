@@ -301,6 +301,10 @@
   }
 
 }
+input[type="submit"][disabled]{
+  background:#DCDCDC;
+  cursor:not-allowed; /* 禁止カーソル */
+}
 
 // お店カード
 
@@ -615,6 +619,56 @@ li.book-card {
   .modal-content {
     padding-top: 24px;
     text-align: center;
+  }
+}
+
+// 入力のステップ
+.registration-steps {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &_line {
+    background: #bfbfbf;
+    width: 10%;
+    height: 1px;
+  }
+  &_step {
+    position: relative;
+    width: 25%;
+  }
+  &_step > .num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #bfbfbf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #bfbfbf;
+  }
+  &_step > .text {
+    width: 100%;
+    color: #bfbfbf;
+    position: absolute;
+    left: 15%;
+    top: 30px;
+  }
+  &_step.-active > .num {
+    border-color: #0a4ea1;
+    color: #0a4ea1;
+  }
+  &_step.-active > .text {
+    color: #0a4ea1;
+    font-weight: 700;
   }
 }
 

@@ -34,23 +34,29 @@ document.getElementById('js-bar-code_search-start').addEventListener('click', ()
   Quagga.onDetected(success => {
   const code = success.codeResult.code;
   if(calc(code)) {
-    alert('読み取りが完了しました!!');
-    
-    // 検索窓を空にする
-    $('#search_word').val('');
-    const resultCode = code;
+    if (code.startsWith('978')) {
 
-    // モーダルを閉じる
-    $('.close-animatedModal').trigger("click");
+      alert('読み取りが完了しました!!');
 
-    // コードを検索窓に入力
-    $('#search_word').val(resultCode);
+      Quagga.stop();
 
-    // 検索ボタンを押させる
-    $('#search').trigger("click");
-
-    // 検索窓をもう一度空にする
-    $('#search_word').val('');
+      // 検索窓を空にする
+      $('#search_word').val('');
+      const resultCode = code;
+  
+      // モーダルを閉じる
+      $('.close-animatedModal').trigger("click");
+  
+      // コードを検索窓に入力
+      $('#search_word').val(resultCode);
+  
+      // 検索ボタンを押させる
+      $('#search').trigger("click");
+  
+      // 検索窓をもう一度空にする
+      $('#search_word').val('');
+      
+    }
 
   }
   })

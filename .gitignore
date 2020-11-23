@@ -1,3 +1,6 @@
 assets/img/srore_img/
 assets/img/book_img/
 assets/functions/hb.php
+package.json
+package-lock.json
+node_modules/*

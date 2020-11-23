@@ -849,6 +849,7 @@ li.book-card {
   width: 100%;
   height: 45px;
   border-radius: 0px;
+  cursor: pointer;
 }
 
 .header__right p a {
@@ -890,6 +891,7 @@ li.book-card {
   background-size: 200% auto;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .gnavi__item:hover {

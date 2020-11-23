@@ -17,17 +17,15 @@ try {
 
   $counts = $dbh->query('SELECT COUNT(*) AS cnt FROM books');
   $cnt = $counts->fetch();
-  $maxpage = ceil($cnt['cnt'] / 6);
+  $maxpage = ceil($cnt['cnt'] / 9);
   $page = min($page, $maxpage);
 
-  $start = ($page - 1) * 6;
+  $start = ($page - 1) * 9;
 
-  $sql = 'SELECT book_title, book_author, book_memo, book_published, book_image_name FROM books WHERE 1 ORDER BY book_id DESC LIMIT ?,6';
+  $sql = 'SELECT book_title, book_author, book_memo, book_published, book_image_name FROM books WHERE 1 ORDER BY book_id DESC LIMIT ?,9';
   $stmt = $dbh->prepare($sql);
   $stmt->bindParam(1, $start, PDO::PARAM_INT);
   $stmt->execute();
-
-
 
   $dbh = null;
 

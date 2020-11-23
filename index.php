@@ -1,6 +1,8 @@
 <?php
 
-define("title" ,"モニカツ｜朝活情報");
+define("title" ,"ホーム｜モニカツ-朝活情報-");
+$pagerole = 'feed';
+
 
 ?>
 

@@ -624,14 +624,17 @@ li.book-card {
 
 // 入力のステップ
 .registration-steps {
+  display: none;
   width: 80%;
   max-width: 800px;
   margin: 0 auto;
   padding-top: 30px;
   padding-bottom: 10%;
-  display: flex;
   justify-content: space-between;
   align-items: center;
+  @include mq(md) {
+    display: flex;
+  }
   &_line {
     background: #bfbfbf;
     width: 10%;

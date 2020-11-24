@@ -808,20 +808,26 @@ li.book-card {
 }
 
 .registration-steps {
+  display: none;
   width: 80%;
   max-width: 800px;
   margin: 0 auto;
   padding-top: 30px;
   padding-bottom: 10%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .registration-steps {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .registration-steps_line {
@@ -1556,6 +1562,21 @@ a:visited {
 
 .regist-check {
   padding: 60px 0 120px;
+}
+
+.regist-check dl {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.regist-check .form-btns {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.regist-check .form-btns button {
+  margin-right: 16px;
+  margin-bottom: 16px;
 }
 
 .login {

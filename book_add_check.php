@@ -79,7 +79,7 @@ if ($book_gazou['size'] > 0) {
           <dd class="staff-data-list__data disp-image max-w200"><?= $dis_gazou; ?></dd>
         </dl>
         <form method="post" action="book_add_done.php">
-          <div class="#">
+          <div>
             <input type="hidden" name="book_name" value="<?= h($book_name); ?>">
             <input type="hidden" name="book_author" value="<?= h($book_author); ?>">
             <input type="hidden" name="book_memo" value="<?= h($book_memo); ?>">

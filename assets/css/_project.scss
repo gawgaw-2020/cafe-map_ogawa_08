@@ -440,6 +440,18 @@ a:visited {
 
 .regist-check {
   padding: 60px 0 120px;
+  dl {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .form-btns {
+    margin-top: 32px;
+    text-align: center;
+    button {
+      margin-right: 16px;
+      margin-bottom: 16px;
+    }
+  }
 }  
 
 .login {

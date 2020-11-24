@@ -1579,6 +1579,10 @@ a:visited {
   margin-bottom: 16px;
 }
 
+.regist-done {
+  padding: 60px 0 120px;
+}
+
 .login {
   padding: 60px 0 120px;
 }

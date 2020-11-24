@@ -37,7 +37,7 @@ try {
 
 <main class="main">
   <div class="section-container">
-    <section class="regist">
+    <section class="regist-done">
       <div class="section-inner">
         <h1 class="level1-heading">朝活ユーザー登録</h1>
         <div class="registration-steps">

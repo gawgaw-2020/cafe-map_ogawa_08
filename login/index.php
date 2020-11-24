@@ -1,21 +1,49 @@
 <?php
+session_start();
 
 $pagerole = 'dispbook';
 define("title" ,"ログイン");
 
+if ($_COOKIE['user_email'] !== '') {
+  $email = $_COOKIE['user_email'];
+}
+
+$error['login'] = '';
+
+if (!empty($_POST)) {
+
+  if ($_POST['user_email'] !== '' && $_POST['user_password'] !== '') {
+    require_once (dirname(__FILE__) . '/../assets/functions/dbconnect.php');
+
+    $login = $dbh->prepare('SELECT * FROM users WHERE user_email=?');
+    $login->execute(array(
+      $_POST['user_email'],
+    ));
+    $user = $login->fetch();
+
+    if(password_verify($_POST['user_password'], $user['user_password'])) {
+      session_regenerate_id(true);
+      $_SESSION['login_user'] = $user;
+
+      if ($_POST['save'] === 'on') {
+        setcookie("user_email", $_POST['user_email'], time() + 60*60*24*14, "/");
+      }
+
+      header('Location: /cafe-map_ogawa_08/index.php');
+      exit();
+
+    } else {
+      $error['login'] = 'failed';
+    }
+  } else {
+    $error['login'] = 'blank';
+  }
+}
+
+
 ?>
 <?php include(dirname(__FILE__).'/../assets/_inc/_head.php'); ?>
 <?php include(dirname(__FILE__).'/../assets/_inc/_header.php'); ?>
-
-<!-- 工事中モーダル -->
-<div class="popup" id="js-popup">
-  <div class="popup-inner">
-    <div class="close-btn" id="js-close-btn"><i class="fas fa-times"></i></div>
-    <a href="#"><img src="/cafe-map_ogawa_08/assets/img/unfinished.png" alt="ポップアップ画像"></a>
-  </div>
-  <div class="black-background" id="js-black-bg"></div>
-</div>
-
 
 <main class="main">
   <div class="section-container">
@@ -24,11 +52,19 @@ define("title" ,"ログイン");
         <h1 class="level1-heading">ログイン</h1>
         <p class="login__text">「モニカツ」ではおすすめの書籍と店舗の閲覧はログイン無しでもお楽しみいただけます。</p>
         <p class="login__text">朝活の投稿やお気に入り機能を楽しみたい場合は、こちらからログインしてください。</p>
-        <form class="login-form" method="post" action="/cafe-map_ogawa_08/login/login_check.php">
+
+        <?php if ($error['login'] === 'blank'): ?>
+          <p class="error">メールドレスまたはパスワードを入力してください</p>
+        <?php endif; ?>
+        <?php if ($error['login'] === 'failed'): ?>
+          <p class="error">メールドレスまたはパスワードを正しく入力してください</p>
+        <?php endif; ?>
+
+        <form class="login-form" method="post" action="">
   
           <div class="input-box">
             <label class="input-box__label" for="js-input-user_email">メールアドレス</label>
-            <input id="js-input-user_email" class="input-box__input" type="email" name="user_email"  autofocus >
+            <input id="js-input-user_email" class="input-box__input" type="email" name="user_email" value="<?= $email ?>" autofocus >
           </div>
     
           <div class="input-box">
@@ -37,7 +73,7 @@ define("title" ,"ログイン");
           </div>
   
           <div class="input-box">
-            <label for="js-input-save"><input id="js-input-save" type="checkbox" name="" id=""><span class="label_inner">入力内容を保存する</sapn></label>
+            <label for="js-input-save"><input id="js-input-save" type="checkbox" name="save" value="on"><span class="label_inner">入力内容を保存する</sapn></label>
           </div>
   
           <div class="submit">
@@ -53,27 +89,6 @@ define("title" ,"ログイン");
 
 <?php include(dirname(__FILE__).'/../assets/_inc/_footer.php'); ?>
 
-<!-- 工事中モーダル -->
-<script>
-window.onload = function() {
-  var popup = document.getElementById('js-popup');
-  if(!popup) return;
-  popup.classList.add('is-show');
-
-  var blackBg = document.getElementById('js-black-bg');
-  var closeBtn = document.getElementById('js-close-btn');
-
-  closePopUp(blackBg);
-  closePopUp(closeBtn);
-
-  function closePopUp(elem) {
-    if(!elem) return;
-    elem.addEventListener('click', function() {
-      popup.classList.remove('is-show');
-    })
-  }
-}
-</script>
 
 </body>
 </html>

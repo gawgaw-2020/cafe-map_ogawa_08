@@ -1146,13 +1146,6 @@ li.book-card {
   }
   .header__right p a {
     font-size: 1.2rem;
-    color: #fff;
-  }
-  .header__right .tutorial {
-    background-color: #F0F6FA;
-  }
-  .header__right .tutorial a {
-    color: #999;
   }
 }
 

@@ -23,6 +23,7 @@
   width: 100%;
 }
 .modal__content{
+  text-align: center;
   background: #fff;
   left: 50%;
   padding: 40px;
@@ -30,6 +31,18 @@
   top: 50%;
   transform: translate(-50%,-50%);
   width: 60%;
+  a {
+    margin-bottom: 16px;
+    margin-right: 24px;
+  }
+  p {
+    margin-bottom: 16px;
+  }
+  .js-modal-close i {
+    &::before {
+      margin-right: 16px;
+    }
+  }
 }
 // 工事中モーダルここまで
 

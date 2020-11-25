@@ -1176,6 +1176,7 @@ li.book-card {
 }
 
 .modal__content {
+  text-align: center;
   background: #fff;
   left: 50%;
   padding: 40px;
@@ -1184,6 +1185,19 @@ li.book-card {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 60%;
+}
+
+.modal__content a {
+  margin-bottom: 16px;
+  margin-right: 24px;
+}
+
+.modal__content p {
+  margin-bottom: 16px;
+}
+
+.modal__content .js-modal-close i::before {
+  margin-right: 16px;
 }
 
 h2 {

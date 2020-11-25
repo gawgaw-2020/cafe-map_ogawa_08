@@ -44,8 +44,8 @@ try {
   <div class="modal__bg js-modal-close"></div>
   <div class="modal__content">
     <p>投稿を削除しますか？</p>
-    <a class="btn btn--transparent btn--link_transparent js-modal-close" href="">キャンセル</a>
-    <button id="book_delete_btn" class="btn btn--red btn--link_red" >削除</button>
+    <a class="btn btn--transparent btn--link_transparent btn--small js-modal-close" href="">キャンセル</a>
+    <button id="book_delete_btn" class="btn btn--red btn--link_red btn--small" >削除</button>
     <p>この操作は取り消せません。あなたのプロフィール、タイムライン、ユーザーのお気に入りから投稿が削除されます。</p>
     <a class="js-modal-close" href=""><i class="fas fa-times"></i>閉じる</a>
   </div>

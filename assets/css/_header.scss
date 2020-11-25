@@ -34,17 +34,14 @@
       border-radius: 0px;
       // cursor: pointer;
       a {
+        color: #999;
         display: inline-block;
-        color: #fff;
         height: 100%;
         width: 100%;
         line-height: 45px;
       }
-    }
-    .tutorial {
-      background-color: #F0F6FA;
-      a {
-        color: #999;
+      .btn-01 {
+        color: #fff;
       }
     }
   }

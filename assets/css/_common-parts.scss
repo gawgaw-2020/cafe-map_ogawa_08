@@ -233,7 +233,13 @@
     background-color: rgba(120, 178, 209, 1);
     border: 1px solid transparent;
   }
-  
+
+  &--light-gray {
+    color: #b6b6b6;
+    background-color:#F0F6FA;
+    border: 1px solid transparent;
+  }
+
   &--orange {
     color: #fff;
     background-color: rgba(238, 152, 0, 1);
@@ -268,6 +274,13 @@
   &--link_blue:focus,
   &--link_blue:hover {
   background-color: rgba(120, 178, 209, 0.8);
+  color: #eee;
+  border-color: transparent;
+  }
+
+  &--link_light-gray:focus,
+  &--link_light-gray:hover {
+  background-color:#e3eaee;
   color: #eee;
   border-color: transparent;
   }
@@ -576,8 +589,52 @@ li.book-card {
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0, 0, 0, .16);
   margin-left: 8px;
+  position: relative;
   .mr24 {
     margin-right: 24px;
+  }
+  &__branch {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+    top: 50px;
+    right: 30px;
+    .branch-list {
+      li {
+        cursor: pointer;
+        padding: 0.5em 2em;
+        transition: 0.2s;
+        &:hover {
+          background-color: rgb(235, 235, 235);
+        }
+        i {
+          margin-right: 8px;
+        }
+      }
+      .delete {
+        color: rgb(255, 67, 67);
+      }
+    }
+  }
+  &__edit {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 50%;
+    transition: all 0.4s;
+    text-align: center;
+    &:hover {
+      background-color: #F0F6FA;
+    }
+    .fa-ellipsis-h {
+      font-size: 2rem;
+      vertical-align: bottom;
+    }
   }
   &__header {
     margin-bottom: 16px;

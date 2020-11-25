@@ -361,6 +361,12 @@ img {
   border: 1px solid transparent;
 }
 
+.btn--light-gray {
+  color: #b6b6b6;
+  background-color: #F0F6FA;
+  border: 1px solid transparent;
+}
+
 .btn--orange {
   color: #fff;
   background-color: #ee9800;
@@ -393,6 +399,12 @@ img {
 
 .btn--link_blue:focus, .btn--link_blue:hover {
   background-color: rgba(120, 178, 209, 0.8);
+  color: #eee;
+  border-color: transparent;
+}
+
+.btn--link_light-gray:focus, .btn--link_light-gray:hover {
+  background-color: #e3eaee;
   color: #eee;
   border-color: transparent;
 }
@@ -753,10 +765,63 @@ li.book-card {
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
           box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
   margin-left: 8px;
+  position: relative;
 }
 
 .book-card .mr24 {
   margin-right: 24px;
+}
+
+.book-card__branch {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+  top: 50px;
+  right: 30px;
+}
+
+.book-card__branch .branch-list li {
+  cursor: pointer;
+  padding: 0.5em 2em;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.book-card__branch .branch-list li:hover {
+  background-color: #ebebeb;
+}
+
+.book-card__branch .branch-list li i {
+  margin-right: 8px;
+}
+
+.book-card__branch .branch-list .delete {
+  color: #ff4343;
+}
+
+.book-card__edit {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 50%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  text-align: center;
+}
+
+.book-card__edit:hover {
+  background-color: #F0F6FA;
+}
+
+.book-card__edit .fa-ellipsis-h {
+  font-size: 2rem;
+  vertical-align: bottom;
 }
 
 .book-card__header {
@@ -934,19 +999,15 @@ li.book-card {
 }
 
 .header__right p a {
+  color: #999;
   display: inline-block;
-  color: #fff;
   height: 100%;
   width: 100%;
   line-height: 45px;
 }
 
-.header__right .tutorial {
-  background-color: #F0F6FA;
-}
-
-.header__right .tutorial a {
-  color: #999;
+.header__right p .btn-01 {
+  color: #fff;
 }
 
 .gnavi {
@@ -1100,66 +1161,36 @@ li.book-card {
   margin: 0 auto;
 }
 
-.popup {
+.content {
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.modal {
+  z-index: 99999;
+  display: none;
+  height: 100vh;
   position: fixed;
-  left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
-  z-index: 9999;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: .6s;
-  transition: .6s;
 }
 
-.popup.is-show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.popup-inner {
+.modal__bg {
+  background: rgba(0, 0, 0, 0.8);
+  height: 100vh;
   position: absolute;
+  width: 100%;
+}
+
+.modal__content {
+  background: #fff;
   left: 50%;
+  padding: 40px;
+  position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 600px;
-  padding: 50px;
-  background-color: #fff;
-  z-index: 2;
-}
-
-.popup-inner img {
-  width: 100%;
-}
-
-.close-btn {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.close-btn i {
-  font-size: 20px;
-  color: #333;
-}
-
-.black-background {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
-  cursor: pointer;
+  width: 60%;
 }
 
 h2 {

@@ -4,7 +4,8 @@ session_start();
 $pagerole = 'dispbook';
 define("title" ,"ログイン");
 
-if ($_COOKIE['user_email'] !== '') {
+$email = '';
+if (isset($_COOKIE['user_email'])) {
   $email = $_COOKIE['user_email'];
 }
 
@@ -22,6 +23,7 @@ if (!empty($_POST)) {
     $user = $login->fetch();
 
     if(password_verify($_POST['user_password'], $user['user_password'])) {
+      // セッションを再生成
       session_regenerate_id(true);
       $_SESSION['login_user'] = $user;
 

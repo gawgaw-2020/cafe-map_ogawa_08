@@ -25,6 +25,8 @@ try {
   
   $dbh = null;
 
+
+
 } catch(PDOException $e) {
   echo $e->getMessage();
   print 'データベースの接続に失敗しました。';
@@ -57,6 +59,7 @@ try {
           </div>
         </div>
         <p class="regist__text">完了しました。</p>
+        <a href="/cafe-map_ogawa_08/login/index.php">ログインページ </a>
       </div>
     </section>
   </div>

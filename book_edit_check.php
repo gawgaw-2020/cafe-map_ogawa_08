@@ -8,7 +8,6 @@ require_once (dirname(__FILE__) . '/assets/functions/common.php');
 $pagerole = 'addbook';
 define("title" ,"おすすめ書籍編集 -確認画面-");
 
-var_dump($_POST);
 
 
 $book_id = $_POST['book_id'];

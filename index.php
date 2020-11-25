@@ -4,11 +4,6 @@ session_start();
 define("title" ,"ホーム｜モニカツ-朝活情報-");
 $pagerole = 'feed';
 
-echo '<pre>';
-var_dump($_SESSION['login_user']);
-var_dump($_COOKIE['user_email']);
-echo '</pre>';
-
 ?>
 
 <?php include(dirname(__FILE__).'/assets/_inc/_head.php'); ?>

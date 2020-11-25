@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once (dirname(__FILE__) . '/assets/functions/common.php');
 
@@ -35,6 +36,7 @@ if ($book_name === '') {
 }
 
 $dis_gazou = '<img src="/cafe-map_ogawa_08/assets/img/book_img/'.$book_image_name_old.'">';
+
 if ($book_gazou['size'] > 0) {
   move_uploaded_file($book_gazou['tmp_name'], './assets/img/book_img/' . $book_gazou['name']);
   $dis_gazou = '<img src="/cafe-map_ogawa_08/assets/img/book_img/'.$book_gazou['name'].'">';

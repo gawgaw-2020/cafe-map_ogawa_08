@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $pagerole = 'dispcafe';
 define("title" ,"朝カフェ一覧画面");

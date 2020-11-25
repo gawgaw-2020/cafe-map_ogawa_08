@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once (dirname(__FILE__) . '/assets/functions/common.php');
 
@@ -49,20 +50,6 @@ if (isset($_GET['book_id']) && is_numeric($_GET['book_id'])) {
     <div class="section-inner">
       <h1 class="level1-heading">おすすめ書籍編集</h1>
 
-      <div class="search">
-        <div class="book-search">
-          <div class="google-books_search">
-            <p>フリーワードで検索</p>
-            <input type="text" id='search_word' placeholder="タイトル・著者名など">
-            <button type='search' id='search'>検索</button>
-          </div>
-          <a id="js-bar-code_search-start" href="#animatedModal" class="bar-code_search">
-            <p><i class="fas fa-barcode"></i></p>
-            <p>バーコード検索を<br>はじめる</p>
-          </a>
-        </div>
-      </div>
-
       <div class="search-result">
         <ul id="content1" class="result-list"></ul>
       </div>
@@ -90,14 +77,14 @@ if (isset($_GET['book_id']) && is_numeric($_GET['book_id'])) {
         <dl class="file-box">
           <dt class="file-box__title">変更する場合</dt>
           <dd class="file-box__data"><input id="gazou" type="file" name="book_image_name" onchange="loadImage(this);"></dd>
-          <dd class="max-w200"><p id="preview"><img id="js-preview-image" src="" alt="書籍画像のプレビュー表示"></p></dd>
+          <dd class="max-w200"><p id="preview"><img id="js-preview-image" src="" alt=""></p></dd>
         </dl>
         <div class="form-btns">
           <input type="hidden" name="book_id" value="<?= $book['book_id']; ?>">
           <input type="hidden" name="book_image_name_old" value="<?= $book_image_name_old; ?>">
           <input id="js-hidden-image" type="hidden" name="selected_image_url" value="">
           <button class="btn btn--blue btn--link_blue" type="submit">入力内容を確認する</button>
-          <a href="/cafe-map_ogawa_08/" class="btn btn--transparent btn--link_transparent" type="submit">戻る</a>
+          <a href="/cafe-map_ogawa_08/book_disp.php" class="btn btn--transparent btn--link_transparent" type="submit">戻る</a>
         </div>
       </form>
     </div>
@@ -106,12 +93,7 @@ if (isset($_GET['book_id']) && is_numeric($_GET['book_id'])) {
 
 <?php include(dirname(__FILE__).'/assets/_inc/_footer.php'); ?>
 
-<script src="/cafe-map_ogawa_08/assets/js/selectBook.js"></script>
-<script src="/cafe-map_ogawa_08/assets/js/google-books.js"></script>
 <script src="/cafe-map_ogawa_08/assets/js/image-preview.js"></script>
-<script src="/cafe-map_ogawa_08/assets/js/animatedModal.min.js"></script>
-<script type="text/javascript" src="https://serratus.github.io/quaggaJS/examples/js/quagga.min.js"></script>
-<script src="/cafe-map_ogawa_08/assets/js/quagga.js"></script>
 <script>
   $("#js-bar-code_search-start").animatedModal({
     color: '#78B2D1'

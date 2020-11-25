@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once (dirname(__FILE__) . '/assets/functions/common.php');
 
@@ -13,6 +14,8 @@ $book_memo = $_POST['book_memo'];
 $book_published = $_POST['book_published'];
 $gazou_name = $_POST['gazou_name'];
 
+$book_post_author = $_SESSION['login_user']['user_id'];
+
 // var_dump($_POST);
 
 try {
@@ -26,7 +29,7 @@ try {
   $stmt->bindValue(':a3', $book_memo, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
   $stmt->bindValue(':a4', $book_published, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
   $stmt->bindValue(':a5', $gazou_name, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
-  $stmt->bindValue(':a6', 1, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
+  $stmt->bindValue(':a6', $book_post_author, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
   $status = $stmt->execute();
   
   $dbh = null;

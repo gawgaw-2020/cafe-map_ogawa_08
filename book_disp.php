@@ -142,6 +142,19 @@ $(function(){
     });
 });
 </script>
+<script>
+  var $grid = $('.book-list'),   
+    emptyCells = [],
+    i;
+
+    // アイテム (li.item) の数だけ空のアイテム (li.cell.is-empty) を生成
+    for (i = 0; i < $grid.find('.book-card').length; i++) {
+        emptyCells.push($('<li>', { class: 'book-card is-empty' }));
+    }
+
+    $grid.append(emptyCells);
+</script>
+
 </body>
 
 </html>

@@ -26,6 +26,7 @@ if (!empty($_POST)) {
       // セッションを再生成
       session_regenerate_id(true);
       $_SESSION['login_user'] = $user;
+      $_SESSION["chk_ssid"]  = session_id();
 
       if ($_POST['save'] === 'on') {
         setcookie("user_email", $_POST['user_email'], time() + 60*60*24*14, "/");

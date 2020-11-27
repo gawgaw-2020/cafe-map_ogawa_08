@@ -182,6 +182,40 @@ img {
   border-radius: 5px;
 }
 
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input-box .btn {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  background: #e5e5e5;
+}
+
+.btn-input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.btn-label {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.input-box .btn-label {
+  width: 30px;
+  text-align: center;
+}
+
 .selectbox-box {
   position: relative;
   margin-bottom: 30px;

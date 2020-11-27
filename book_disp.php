@@ -8,8 +8,8 @@ try {
 
   require_once(dirname(__FILE__) . '/assets/functions/dbconnect.php');
 
-  if (isset($_REQUEST['page'])) {
-    $page = $_REQUEST['page'];
+  if (isset($GET['page'])) {
+    $page = $GET['page'];
   } else {
     $page = 1;
   }
@@ -143,7 +143,7 @@ $(function(){
 });
 </script>
 <script>
-  var $grid = $('.book-list'),   
+  var $grid = $('.book-list'),
     emptyCells = [],
     i;
 

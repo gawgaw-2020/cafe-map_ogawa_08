@@ -757,6 +757,59 @@ li.book-card {
   }
 }
 
+// マイページのプロフィールカード
+.profile-card {
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  padding: 24px;
+  &__image {
+    margin-bottom: 16px;
+    img {
+      border-radius: 50%;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto;
+    }
+  }
+  &__name {
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  &__memo {
+    textarea {
+      border: none;
+      width: 100%;
+      resize: none;
+    }
+  }
+  &__edit {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    padding: 4px 0;
+  }
+}
+
+// プロフィールカード内の数字ボックス
+.profile-numbers {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  &__box {
+    width: 104px;
+    text-align: center;
+  }
+  &__number {
+    font-size: 2rem;
+  }
+  &__title {
+    font-size: 1.2rem;
+  }
+}
+
 // utility
 .max-w200 {
   max-width: 200px;

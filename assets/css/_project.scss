@@ -325,6 +325,7 @@ a:visited {
 
 // bb8ここまで
 
+// 店舗の一覧登録画面
 .cafe-disp {
   padding-top: 40px;
   padding-bottom: 120px;
@@ -339,6 +340,7 @@ a:visited {
   }
 }
 
+// 本の一覧登録画面
 .book-disp {
   padding-top: 40px;
   padding-bottom: 120px;
@@ -353,6 +355,7 @@ a:visited {
   }
 }
 
+// カフェの登録画面
 .cafe-add {
   #input-test {
     text-align: center;
@@ -377,6 +380,7 @@ a:visited {
   }
 }
 
+// カフェの登録確認画面
 .cafe-add-check {
   padding-top: 40px;
   padding-bottom: 120px;
@@ -394,6 +398,7 @@ a:visited {
   }
 }
 
+// 本の登録確認画面
 .book-add-check {
   padding-top: 40px;
   padding-bottom: 120px;
@@ -411,6 +416,7 @@ a:visited {
   }
 }
 
+// 新規登録ページ
 .regist {
   padding: 60px 0 120px;
   &__text {
@@ -424,6 +430,7 @@ a:visited {
   }
 }  
 
+// 新規登録確認画面
 .regist-check {
   padding: 60px 0 120px;
   dl {
@@ -440,10 +447,12 @@ a:visited {
   }
 }
 
+// 新規登録結果画面
 .regist-done {
   padding: 60px 0 120px;
-}  
+}
 
+// ログインページ
 .login {
   padding: 60px 0 120px;
   &__text {
@@ -462,5 +471,25 @@ a:visited {
     a {
       text-decoration: underline;
     }
+  }
+}
+
+// マイページ
+
+.mypage {
+  .section-inner {
+    margin: 24px auto 0;
+    @include mq() {
+      display: flex;
+    }
+  }
+  &__profile {
+    @include mq() {
+      max-width: 360px;
+    }
+  }
+  &__posts {
+    width: auto;
+    padding: 24px;
   }
 }

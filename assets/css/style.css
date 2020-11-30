@@ -999,23 +999,38 @@ li.book-card {
 }
 
 .profile-card__name {
+  border: none;
+  text-align: center;
   color: #333;
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 4px;
+  pointer-events: none;
+}
+
+.profile-card__memo {
+  height: auto;
 }
 
 .profile-card__memo textarea {
   border: none;
   width: 100%;
   resize: none;
+  pointer-events: none;
+  height: calc( 1.8em * 3);
+  line-height: 1.8;
 }
 
 .profile-card__edit {
+  height: auto;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
   background-color: #333;
   color: #fff;
   font-weight: bold;
   padding: 4px 0;
+  cursor: pointer;
 }
 
 .profile-numbers {
@@ -1753,14 +1768,23 @@ a:visited {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .mypage__profile {
-    max-width: 360px;
-  }
+.mypage__profile {
+  max-width: 350px;
+  margin: 0 auto;
 }
 
 .mypage__posts {
   width: auto;
   padding: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .mypage__posts .book-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 /*# sourceMappingURL=style.css.map */

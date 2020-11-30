@@ -8,8 +8,8 @@
   <!-- OGP Tag data-->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@gawgaw_2020">
-  <meta name="twitter:title" content="モニカツ｜朝活情報アプリ">
-  <meta name="twitter:description" content="「モニカツ」は朝活SNSです。朝活の投稿やおすすめの書籍・朝活におすすめのお店をまとめています。">
+  <meta name="twitter:title" content="アサドク!!｜朝の読書応援アプリ">
+  <meta name="twitter:description" content="「アサドク!!」は朝読にぴったりのアプリです。おすすめの書籍・朝活におすすめのお店が投稿できます。">
   <meta name="twitter:image" content="/cafe-map_ogawa_08/assets/img/pablo-839.png">
   <!-- stylesheet -->
   <link rel="stylesheet" href="/cafe-map_ogawa_08/assets/css/style.css">

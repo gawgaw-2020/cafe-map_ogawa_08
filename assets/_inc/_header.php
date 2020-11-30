@@ -4,7 +4,7 @@
     <div class="header__inner">
       <div class="header__logo">
         <a href="/cafe-map_ogawa_08/">
-          <h1 class="title">モニカツ</h1>
+          <h1 class="title">アサドク</h1>
           <p class="header-logo"><img src="/cafe-map_ogawa_08/146_w_hoso.png" alt=""></p>
         </a>
       </div>

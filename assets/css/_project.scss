@@ -484,12 +484,18 @@ a:visited {
     }
   }
   &__profile {
-    @include mq() {
-      max-width: 360px;
-    }
+    max-width: 350px;
+    margin: 0 auto;
   }
   &__posts {
     width: auto;
     padding: 24px;
+    .book-list {
+      @include mq(md) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  
   }
 }

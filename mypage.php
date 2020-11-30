@@ -44,6 +44,10 @@ try {
 }
 
 
+
+
+
+
 ?>
 <?php include(dirname(__FILE__).'/assets/_inc/_head.php'); ?>
 <?php include(dirname(__FILE__).'/assets/_inc/_header.php'); ?>
@@ -66,16 +70,24 @@ try {
       <div class="mypage__profile">
         <form action="user_edit.php" method="post" enctype="multipart/form-data">
           <div class="profile-card">
+          <?php if ($user_image_name === ''): ?>
+            <div class="profile-card__image">
+              <img src="https://oga-chan.jp/cafe-map_ogawa_08/assets/img/icon.png" alt="">
+            </div>
+          <?php else: ?>
             <div class="profile-card__image">
               <img src="/cafe-map_ogawa_08/assets/img/user_img/<?= $user_image_name ?>" alt="">
             </div>
-
+          <?php endif; ?>
             <dl id="js_image_change" class="file-box">
               <dt class="file-box__title">プロフィール画像を変更</dt>
               <dd class="file-box__data"><input id="gazou" type="file" name="user_image_name" onchange="loadImage(this);"></dd>
-              <dd><p id="preview" class="profile-card__image"><img id="js-preview-image" src="/cafe-map_ogawa_08/assets/img/user_img/<?= $user_image_name ?>" alt=""></p></dd>
+              <?php if ($user_image_name === ''): ?>
+                <dd><p id="preview" class="profile-card__image"><img id="js-preview-image" src="https://oga-chan.jp/cafe-map_ogawa_08/assets/img/icon.png" alt=""></p></dd>
+              <?php else: ?>
+                <dd><p id="preview" class="profile-card__image"><img id="js-preview-image" src="/cafe-map_ogawa_08/assets/img/user_img/<?= $user_image_name ?>" alt=""></p></dd>
+              <?php endif; ?>
             </dl>
-
             <input id="js-user_name" name="user_name" class="profile-card__name" type="text" value="<?= $user_name; ?>" readonly>
             <div class="profile-card__memo">
               <textarea name="user_memo" id="js-user_memo" readonly><?= $user_memo ?></textarea>

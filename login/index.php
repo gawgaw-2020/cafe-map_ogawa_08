@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$pagerole = 'dispbook';
+$pagerole = 'login';
 define("title" ,"ログイン");
 
 $email = '';

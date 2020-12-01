@@ -1,4 +1,8 @@
 <?php
+
+header('Location: /cafe-map_ogawa_08/book_disp.php');
+exit();
+
 session_start();
 
 define("title" ,"ホーム｜モニカツ-朝活情報-");
